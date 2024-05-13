@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableHighlight, TextInput, Button } from 'react-native';
-import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text, View, TouchableHighlight, TextInput, Button,Alert } from 'react-native';
+import React, { useState } from 'react';
 
 export default function Form({ addHendler }) {
     const [text, setText] = useState('')
@@ -14,11 +14,9 @@ export default function Form({ addHendler }) {
             addHendler(text)
             setText('')
         } else {
-            alert('Напишите название задачи')
+            Alert.alert('Ошибка ввода','Напишите название задачи')
         }
     }
-
-    useEffect(() => {}, [text])
 
     return (
         <View>
